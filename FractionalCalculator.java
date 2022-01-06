@@ -14,7 +14,7 @@ public class FractionalCalculator {
         System.out.println("Please separate your operator and operands by putting a space on both sides of the operator (1/2 * 83, 2 / 1/2, 83 + -9/10).\n");
         System.out.println("At this time, only two operands can be evaluated.\n");
         System.out.println("Valid operators include +, -, *, and /\n");
-        System.out.println("Type quit at anytime to leave. If an incorrectly formatted expression is entered, the program will stop.\n");
+        System.out.println("Type \"quit\" at anytime to leave.\n");
         System.out.print("Enter an expression: ");
 
         String input = scan.nextLine().toLowerCase(); // input is the user's entered expression
@@ -23,7 +23,12 @@ public class FractionalCalculator {
                 System.out.print(runTests());
             }
             else {
-                System.out.print(produceAnswer(input));
+                try {
+                    System.out.print(produceAnswer(input));
+                }
+                catch(Exception e) {
+                    System.out.print("Please format your expression correctly.");
+                }
             }
             System.out.println();
             System.out.println();
