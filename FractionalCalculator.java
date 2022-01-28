@@ -1,7 +1,9 @@
-// computes arithmetic operations with integers and fractions and outputs the result as a reduced mixed fraction
-
 import java.util.Scanner;
 
+/**
+ * @author Matthew Perry
+ * Description: Computes arithmetic operations with integers and fractions and outputs the result as a reduced mixed fraction.
+ */
 public class FractionalCalculator {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -38,9 +40,14 @@ public class FractionalCalculator {
 
         System.out.println();
         System.out.print("Goodbye! Thank you for using Fractional Calculator!");
+        scan.close();
     }
 
-    // returns the answer of the user's expression
+    /**
+     * Description: Returns the answer of the user's expression.
+     * Pre-Condition: The input String must be formatted correctly.
+     * Post-Condition: A String is returned.
+     */
     public static String produceAnswer(String input) {
         String firstOperand = input.substring(0, input.indexOf(" "));
         String operator = input.substring(input.indexOf(" ") + 1, input.indexOf(" ") + 2);
@@ -56,7 +63,11 @@ public class FractionalCalculator {
         return evaluate(firstWhole, firstNumerator, firstDenominator, secondWhole, secondNumerator, secondDenominator, operator);
     }
 
-    // evaluates the user's expression
+    /**
+     * Description: Evaluates the user's expression.
+     * Pre-Condition: All the parameters must be ints.
+     * Post-Condition: The evaluated expression is returned as a String.
+     */
     // the variables starting with "first" correspond to the first operand and the variables starting with "second" correspond to the second operand
     public static String evaluate(int firstWhole, int firstNumerator, int firstDenominator, int secondWhole, int secondNumerator,
                                   int secondDenominator, String operator) {
@@ -92,7 +103,11 @@ public class FractionalCalculator {
         return simplify(newNumerator, newDenominator);
     }
 
-    // makes the value of a numerator negative if the whole is negative
+    /**
+     * Description: Makes the value of a numerator negative if the whole is negative.
+     * Pre-Condition: The parameters must both be ints.
+     * Post-Condition: A correctly formatted numerator is returned.
+     */
     public static int numeratorNegative(int whole, int numerator) {
         if (whole != 0 && whole == (Math.abs(whole) * -1)) {
             numerator = numerator * -1;
@@ -100,7 +115,11 @@ public class FractionalCalculator {
         return numerator;
     }
 
-    // simplifies a fraction into a whole, a proper fraction, or a mixed number
+    /**
+     * Description: Simplifies a fraction into a whole, a proper fraction, or a mixed number.
+     * Pre-Condition: The parameters must both be ints.
+     * Post-Condition: A simplified fraction is returned.
+     */
     public static String simplify(int numerator, int denominator) {
 
         // in order for the output to be displayed correctly, the numerator becomes negative if the denominator is negative
@@ -137,7 +156,11 @@ public class FractionalCalculator {
 
     }
 
-    // parses an operand into an array that contains a whole, a numerator, and a denominator
+    /**
+     * Description: Parses an operand into an array that contains a whole, a numerator, and a denominator.
+     * Pre-Condition: The operand must be formatted correctly.
+     * Post-Condition: An int array containing a whole, a numerator, and a denominator is returned.
+     */
     public static int[] parsedOperand(String operand) {
         String whole = "0"; // whole is the whole in the operand
 
@@ -172,7 +195,11 @@ public class FractionalCalculator {
         return parsedOperand;
     }
 
-    // tests a variety of different expressions and determines if the actual output is the same as the expected output
+    /**
+     * Description: Tests a variety of different expressions and determines if the actual output is the same as the expected output.
+     * Pre-Condition: The rest of the code must run and compile.
+     * Post-Condition: Each test result is printed and the total amount of test cases passed is returned as a String.
+     */
     public static String runTests() {
         System.out.println();
         // inputs is the test inputs
@@ -202,4 +229,5 @@ public class FractionalCalculator {
         // the amount of tests passed is returned
         return "Tests: " + passCount + " of " + inputs.length + " Test Cases Passed";
     }
+
 }
