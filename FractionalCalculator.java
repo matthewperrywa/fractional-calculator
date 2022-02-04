@@ -46,7 +46,7 @@ public class FractionalCalculator {
     /**
      * Description: Returns the answer of the user's expression.
      * Pre-Condition: The input String must be formatted correctly.
-     * Post-Condition: A String is returned.
+     * Post-Condition: None.
      */
     public static String produceAnswer(String input) {
         String firstOperand = input.substring(0, input.indexOf(" "));
@@ -65,8 +65,8 @@ public class FractionalCalculator {
 
     /**
      * Description: Evaluates the user's expression.
-     * Pre-Condition: All the parameters must be ints.
-     * Post-Condition: The evaluated expression is returned as a String.
+     * Pre-Condition: The operator must be "+", "-", "*", or "/".
+     * Post-Condition: None.
      */
     // the variables starting with "first" correspond to the first operand and the variables starting with "second" correspond to the second operand
     public static String evaluate(int firstWhole, int firstNumerator, int firstDenominator, int secondWhole, int secondNumerator,
@@ -104,9 +104,9 @@ public class FractionalCalculator {
     }
 
     /**
-     * Description: Makes the value of a numerator negative if the whole is negative.
-     * Pre-Condition: The parameters must both be ints.
-     * Post-Condition: A correctly formatted numerator is returned.
+     * Description: Makes the value of a numerator negative if the whole is negative. The numerator is returned.
+     * Pre-Condition: None.
+     * Post-Condition: None.
      */
     public static int numeratorNegative(int whole, int numerator) {
         if (whole != 0 && whole == (Math.abs(whole) * -1)) {
@@ -117,8 +117,8 @@ public class FractionalCalculator {
 
     /**
      * Description: Simplifies a fraction into a whole, a proper fraction, or a mixed number.
-     * Pre-Condition: The parameters must both be ints.
-     * Post-Condition: A simplified fraction is returned.
+     * Pre-Condition: None.
+     * Post-Condition: None.
      */
     public static String simplify(int numerator, int denominator) {
 
@@ -159,7 +159,7 @@ public class FractionalCalculator {
     /**
      * Description: Parses an operand into an array that contains a whole, a numerator, and a denominator.
      * Pre-Condition: The operand must be formatted correctly.
-     * Post-Condition: An int array containing a whole, a numerator, and a denominator is returned.
+     * Post-Condition: None.
      */
     public static int[] parsedOperand(String operand) {
         String whole = "0"; // whole is the whole in the operand
@@ -197,7 +197,7 @@ public class FractionalCalculator {
 
     /**
      * Description: Tests a variety of different expressions and determines if the actual output is the same as the expected output.
-     * Pre-Condition: The rest of the code must run and compile.
+     * Pre-Condition: None.
      * Post-Condition: Each test result is printed and the total amount of test cases passed is returned as a String.
      */
     public static String runTests() {
